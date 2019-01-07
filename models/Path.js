@@ -7,6 +7,9 @@ const Path = new Schema({
     StartingPoint: String,
     Description: String,
     Stops: String,
-    // need to change stops to the documents for the spcific stops
+    // ^^^^^^  need to change stops to the documents for the spcific stops
+    LoggedBy: String,
+    Value: Number,
+    // ^^^^^^ need to figure out a way to increase value with clicks
     
 })
