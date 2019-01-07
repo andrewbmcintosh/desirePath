@@ -2,14 +2,14 @@ const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 
 const Path = new Schema({
-    Name: String,
-    Destination: String,
-    StartingPoint: String,
-    Description: String,
-    Stops: String,
+    name: String,
+    destination: String,
+    startingPoint: String,
+    description: String,
+    stops: String,
     // ^^^^^^  need to change stops to the documents for the spcific stops
-    LoggedBy: String,
-    Value: Number,
+    loggedBy: String,
+    value: Number,
     // ^^^^^^ need to figure out a way to increase value with clicks
 
 });
