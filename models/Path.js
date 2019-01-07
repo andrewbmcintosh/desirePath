@@ -11,5 +11,7 @@ const Path = new Schema({
     LoggedBy: String,
     Value: Number,
     // ^^^^^^ need to figure out a way to increase value with clicks
-    
-})
+
+});
+
+module.exports = mongoose.model("Path", Path)
