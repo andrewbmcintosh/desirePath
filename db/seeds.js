@@ -18,4 +18,24 @@ Path.deleteMany({}).
                 stops: "The Ravine, Athens Y camp",
                 loggedBy: "Andrew B. McIntosh"
             })
+    }).then(() => {
+        return activity.create({
+            name: "Fishing on Lake Eufala",
+            img: ,
+            address: "Lake Eufala",
+            city: "Eufala",
+            state: "AL",
+            type: "Fishing",
+            description: "no better place to catch them ol crimson fish",
+        })
+    }).then(() => {
+        return activity.food({
+            name: "Fishing on Lake Eufala",
+            img: ,
+            address: "Lake Eufala",
+            city: "Eufala",
+            state: "AL",
+            type: "Fishing",
+            description: "no better place to catch them ol crimson fish",
+        })
     })
