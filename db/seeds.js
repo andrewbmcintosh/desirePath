@@ -1,4 +1,8 @@
 const Path = require('../models/Path')
+const Activity = require('../models/Activity')
+const Food = require('../models/Food')
+const GasStation = require('../models/GasStation')
+const Scenery = require('../models/Scenery')
 
 Path.deleteMany({}).
     then(() => {
@@ -19,9 +23,9 @@ Path.deleteMany({}).
                 loggedBy: "Andrew B. McIntosh"
             })
     }).then(() => {
-        return activity.create({
+        return Activity.create({
             name: "Fishing on Lake Eufala",
-            img: ,
+            img: "--Picture of lake--",
             address: "Lake Eufala",
             city: "Eufala",
             state: "AL",
@@ -29,13 +33,32 @@ Path.deleteMany({}).
             description: "no better place to catch them ol crimson fish",
         })
     }).then(() => {
-        return activity.food({
-            name: "Fishing on Lake Eufala",
-            img: ,
-            address: "Lake Eufala",
-            city: "Eufala",
+        return Food.create({
+            name: "Fried Chicken Stand",
+            img: "--picture of a parking log",
+            address: "Big Lots Parking Lot",
+            city: "Dothan",
             state: "AL",
-            type: "Fishing",
-            description: "no better place to catch them ol crimson fish",
+            category: "Southern/Almost Cajun",
+            description: "if your lucky youll be driving by the big lots when this stand is open. Its a trailer with a two person team. Fried chicken is incredible.",
+        })
+    }).then(() => {
+        return GasStation.create({
+            name: "Love's Travel Stop",
+            img: "--picture of a loves--",
+            address: "431 Main Street",
+            city: "Shorter",
+            state: "AL",
+            foodOptions: "Four different rollers, Subway, Mcdonalds",
+            description: "This is one of the best Love's in the Southeast. Cheapest Gas. The last quality one you will see on the way to 30A.",
+        })
+    }).then(() => {
+        return Scenery.create({
+            name: "View over Western Lake at Dunes on the Gulf Coast",
+            img: "--picture of dunes--",
+            address: "30°19'39.5 N 86°08'52.2 W",
+            city: "Seaside",
+            state: "FL",
+            description: "One of the most beautiful sights to see is driving on the little bridge over Western Lake on 30A looking towards the gulf. If you catch the time right you can see the dunes change color with the sunset. ",
         })
     })
