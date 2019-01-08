@@ -3,15 +3,18 @@ const router = express.Router()
 const pathController = require('../controllers/pathController')
 const gasStationController = require("../models/GasStation")
 const sceneryController = require("../controllers/sceneryController")
+const foodController = require("../controllers/foodController")
 
 router.get('/', pathController.index)
 
 router.get('/', gasStationController.index)
-router.put('/',gasStationController.create)
+router.put('/', gasStationController.create)
 
 router.get('/', sceneryController.index)
-router.put('/',sceneryController.create)
+router.put('/', sceneryController.create)
 
+router.get('/', foodController.index)
+router.put('/', foodController.create)
 
 
 // a route for gas stations, paths, food, scenic
