@@ -1,4 +1,4 @@
-Paths = require("../models/Path")
+const Paths = require("../models/Path")
 
 const pathController = {
     index: (req, res) => {
