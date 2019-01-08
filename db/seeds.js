@@ -4,6 +4,7 @@ const Food = require('../models/Food')
 const GasStation = require('../models/GasStation')
 const Scenery = require('../models/Scenery')
 
+
 Path.deleteMany({}).
     then(() => {
         return Path.create({
