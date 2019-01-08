@@ -14,8 +14,8 @@ const pathController = {
             startingPoint: req.body.startingPoint,
             description: req.body.description,
             stops: req.body.stops,
-            loggedBy: req.body.loggedBy,
-            value: req.body.value
+            loggedBy: req.body.loggedBy
+            // value: req.body.value ** commented out to figure out how number works
         }).then(newPath => {
             res.redirect('/')
         })

@@ -8,8 +8,8 @@ const Path = new Schema({
     description: String,
     stops: String,
     // ^^^^^^  need to change stops to the documents for the spcific stops
-    loggedBy: String,
-    value: Number,
+    loggedBy: String
+    // value: Number, ** commented out to figure out how number works 
     // ^^^^^^ need to figure out a way to increase value with clicks
 
 });
