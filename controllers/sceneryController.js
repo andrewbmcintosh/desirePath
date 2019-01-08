@@ -1,15 +1,15 @@
 const Paths = require("../models/Path")
-const GasStation = require("../models/GasStation")
+const Scenery = require("../models/Scenery")
 
-const gasStationController = {
+const sceneryController = {
     index: (req, res) => {
-        Paths.find({}).then(gasStation => {
-            res.render('app/index', { gasStation })
+        Paths.find({}).then(scenery => {
+            res.render('app/index', { scenery })
         })
     },
     create: (req, res) => {
         console.log(req.body)
-        GasStation.create({
+        Scenery.create({
             name: req.body.name,
             img: req.body.img,
             address: req.body.address,
@@ -23,4 +23,4 @@ const gasStationController = {
     }
 }
 
-module.exports = gasStationController
+module.exports = sceneryController
