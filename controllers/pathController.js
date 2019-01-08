@@ -1,14 +1,14 @@
-Path = require("../models/Path")
+Paths = require("../models/Path")
 
 const pathController = {
     index: (req, res) => {
-        Path.find({}).then(paths => {
+        Paths.find({}).then(paths => {
             res.render('app/index', { paths })
         })
     },
     create: (req, res) => {
         console.log(req.body)
-        Path.create({
+        Paths.create({
             name: req.body.name,
             destination: req.body.destination,
             startingPoint: req.body.startingPoint,

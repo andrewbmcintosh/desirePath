@@ -10,5 +10,12 @@ Path.deleteMany({}).
             stops: "loves, preesters pecans, the shore",
             loggedBy: "Andrew B. McIntosh"
             // value:
-        })
+        }, {
+                name: "scenic route to Montreat",
+                destination: "Montreat",
+                startingPoint: "Atlanta",
+                description: "great drive to North Carolina. Drive through North Georgia.",
+                stops: "The Ravine, Athens Y camp",
+                loggedBy: "Andrew B. McIntosh"
+            })
     })

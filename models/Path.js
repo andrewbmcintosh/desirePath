@@ -1,7 +1,7 @@
 const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 
-const Path = new Schema({
+const Paths = new Schema({
     name: String,
     destination: String,
     startingPoint: String,
@@ -14,4 +14,4 @@ const Path = new Schema({
 
 });
 
-module.exports = mongoose.model("Path", Path)
+module.exports = mongoose.model("Paths", Paths)
