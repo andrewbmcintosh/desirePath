@@ -6,6 +6,9 @@ const pathController = {
             res.render('app/index', { paths })
         })
     },
+    new: (req, res) => {
+        res.render("app/newPath")
+    },
     create: (req, res) => {
         console.log(req.body)
         Paths.create({

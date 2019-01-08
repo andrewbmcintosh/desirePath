@@ -3,8 +3,12 @@ const Schema = mongoose.Schema
 
 const Paths = new Schema({
     name: String,
-    destination: String,
-    startingPoint: String,
+    destinationAddress: String,
+    destinationCity: String,
+    destinationState: String,
+    startingAddress: String,
+    startingCity: String,
+    startingState: String,
     description: String,
     stops: String,
     // ^^^^^^  need to change stops to the documents for the spcific stops
