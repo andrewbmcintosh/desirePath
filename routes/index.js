@@ -8,13 +8,16 @@ const foodController = require("../controllers/foodController")
 router.get('/', pathController.index)
 
 router.get('/', gasStationController.index)
-router.put('/', gasStationController.create)
+router.post('/', gasStationController.create)
 
 router.get('/', sceneryController.index)
-router.put('/', sceneryController.create)
+router.post('/', sceneryController.create)
 
 router.get('/', foodController.index)
-router.put('/', foodController.create)
+router.post('/', foodController.create)
+
+router.get('/', activity.index)
+router.post('/', activity.create)
 
 
 // a route for gas stations, paths, food, scenic
