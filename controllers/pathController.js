@@ -31,7 +31,7 @@ const pathController = {
         const pathId = req.params.pathId
         Paths.findById(pathId).then((paths) => {
             console.log(paths)
-            res.render('app/show', { paths })
+            res.render('app/showPath', { paths })
         })
     }
 }

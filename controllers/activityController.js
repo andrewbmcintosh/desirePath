@@ -5,6 +5,8 @@ const activityController = {
         Activity.find({}).then(activity => {
             res.render('app/index', { acitivity })
         })
+    }, new: (req, res) => {
+        res.render("app/newActivity")
     },
     create: (req, res) => {
         console.log(req.body)
@@ -18,6 +20,13 @@ const activityController = {
             description: req.body.description
         }).then(newpath => {
             res.redirect('/')
+        })
+    },
+    show: (req, res) => {
+        const activityId = req.params.activityId
+        Activity.findById(activityId).then((activity) => {
+            console.log(activity)
+            res.render('app/showActivity', { activity })
         })
     }
 }

@@ -1,21 +1,31 @@
 const express = require('express')
 const router = express.Router()
 const pathController = require('../controllers/pathController')
+const activityController = require('../controllers/activityController')
+// const foodController = require('../controllers/foodController')
+// const gasController = require('../controllers/gasController')
+// const sceneryController = require('../controllers/sceneryController')
+
+
 // const gasStationController = require("../models/GasStation")
 // const sceneryController = require("../controllers/sceneryController")
 // const foodController = require("../controllers/foodController")
 
 router.get('/', pathController.index)
-router.get('/new', pathController.new)
+router.get('/newpath', pathController.new)
 router.post('/', pathController.create)
 router.get('/:pathId', pathController.show)
 
 // when you click on the add button you take that object id and add it to the path id.
 // because of this we need to see the two ids in the url
 
+// router.get('/activity', activity.index)
+router.get('/newactivity', activityController.new)
+router.post('/activity', activityController.create)
+router.get('/:activityId', pathController.show)
 
 // router.get('/gasstation', gasStationController.index)
-// router.post('/', gasStationController.create)
+// router.post('/gasstation', gasStationController.create)
 
 
 
@@ -25,8 +35,7 @@ router.get('/:pathId', pathController.show)
 // router.get('/food', foodController.index)
 // router.post('/', foodController.create)
 
-// router.get('/activity', activity.index)
-// router.post('/', activity.create)
+
 
 
 // a route for gas stations, paths, food, scenic
