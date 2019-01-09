@@ -23,10 +23,16 @@ router.get('/activity', activityController.index)
 // going to create a add stop route to funnel the add stops into. This can
 // help create a clear way to design something where a person does not 
 // need to create a path to add a stop
-// router.post('/:pathId/addStop/activity/:activityId', addStopController.activity)
+router.post('/:pathId/addStop/activity/:activityId', addStopController.activity)
+router.post('/:pathId/addStop/activity/:foodId', addStopController.food)
+router.post('/:pathId/addStop/activity/:gasStationId', addStopController.gasStation)
+router.post('/:pathId/addStop/activity/:sceneryId', addStopController.scenery)
 
 router.get('/path/:pathId', pathController.show)
 router.get('/activity/:activityId', activityController.show)
+router.get('/food/:foodId', foodController.show)
+router.get('/gasStation/:gasStationId', gasStationController.show)
+router.get('/scenery/:sceneryId', sceneryController.show)
 
 // then
 // when you click on the add button you take that object id and add it to the path id.

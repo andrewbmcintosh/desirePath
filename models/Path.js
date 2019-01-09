@@ -10,8 +10,9 @@ const Paths = new Schema({
     startingCity: String,
     startingState: String,
     description: String,
-    stops: String,
-    // ^^^^^^  need to change stops to the documents for the spcific stops
+    stops: [{
+        type: Schema.Types.ObjectId,
+    }],
     loggedBy: String
     // value: Number, ** commented out to figure out how number works 
     // ^^^^^^ need to figure out a way to increase value with clicks

@@ -1,13 +1,35 @@
-// const Paths = require("../models/path")
-// const Activitys = require("../models/Activity")
+const Paths = require("../models/Path")
+const Activitys = require("../models/Activity")
 
-// const addStopController = {
-//     activity: (req, res) => {
-// // need to be able to pull the pathId and the activityId and then push that
-// // activityId into the stops of the path with the pathId
+const addStopController = {
+    activity: (req, res) => {
+        const pathId = req.params.pathId
+        const activityId = req.params.activityId
+        Paths.findByIdAndUpdate(pathId, { $push: { stops: activityId } }).then(() => {
+            console.log(activityId)
+        })
+    },
+    food: (req, res) => {
+        const pathId = req.params.pathId
+        const foodId = req.params.foodId
+        Paths.findByIdAndUpdate(pathId, { $push: { stops: foodId } }).then(() => {
+            console.log(foodId)
+        })
+    },
+    gasStation: (req, res) => {
+        const pathId = req.params.pathId
+        const gasStationId = req.params.gasStationId
+        Paths.findByIdAndUpdate(pathId, { $push: { stops: gasStationId } }).then(() => {
+            console.log(gasStationId)
+        })
+    },
+    scenery: (req, res) => {
+        const pathId = req.params.pathId
+        const sceneryId = req.params.sceneryId
+        Paths.findByIdAndUpdate(pathId, { $push: { stops: sceneryId } }).then(() => {
+            console.log(sceneryId)
+        })
+    },
+}
 
-
-//     }
-// }
-
-// module.exports = addStopController
+module.exports = addStopController
