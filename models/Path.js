@@ -10,7 +10,7 @@ const Paths = new Schema({
     startingCity: String,
     startingState: String,
     description: String,
-    stops: [],
+    stops: String,
     // ^^^^^^  need to change stops to the documents for the spcific stops
     loggedBy: String
     // value: Number, ** commented out to figure out how number works 
