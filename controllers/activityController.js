@@ -1,15 +1,14 @@
-const Paths = require("../models/Path")
 const Activity = require("../models/Activity")
 
 const activityController = {
     index: (req, res) => {
-        Paths.find({}).then(activity => {
+        Activity.find({}).then(activity => {
             res.render('app/index', { acitivity })
         })
     },
     create: (req, res) => {
         console.log(req.body)
-        GasStation.create({
+        Activity.create({
             name: req.body.name,
             img: req.body.img,
             address: req.body.address,

@@ -1,9 +1,8 @@
-const Paths = require("../models/Path")
 const Scenery = require("../models/Scenery")
 
 const sceneryController = {
     index: (req, res) => {
-        Paths.find({}).then(scenery => {
+        Scenery.find({}).then(scenery => {
             res.render('app/index', { scenery })
         })
     },

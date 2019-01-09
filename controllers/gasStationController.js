@@ -1,9 +1,8 @@
-const Paths = require("../models/Path")
 const GasStation = require("../models/GasStation")
 
 const gasStationController = {
     index: (req, res) => {
-        Paths.find({}).then(gasStation => {
+        GasStation.find({}).then(gasStation => {
             res.render('app/index', { gasStation })
         })
     },
