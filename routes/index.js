@@ -18,7 +18,7 @@ router.post('/', pathController.create)
 
 router.get('/newactivity', activityController.new)
 router.get('/activity', activityController.index)
-router.post('/activity', activityController.create)
+// router.post('/activity', activityController.create)
 router.post('/:pathId/activity', activityController.createStopInPath)
 
 // going to create a add stop route to funnel the add stops into. This can
