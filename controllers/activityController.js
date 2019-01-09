@@ -1,22 +1,22 @@
-const Activity = require("../models/Activity")
+const Activitys = require("../models/Activity")
 
 const activityController = {
     index: (req, res) => {
-        Activity.find({}).then(activity => {
-            res.render('app/index', { acitivity })
+        Activitys.find({}).then(activitys => {
+            res.render('app/index', { activitys })
         })
     }, new: (req, res) => {
         res.render("app/newActivity")
     },
     create: (req, res) => {
         console.log(req.body)
-        Activity.create({
+        Activitys.create({
             name: req.body.name,
             img: req.body.img,
             address: req.body.address,
             city: req.body.city,
             state: req.body.state,
-            type: req.body.foodOptions,
+            type: req.body.type,
             description: req.body.description
         }).then(newpath => {
             res.redirect('/')
@@ -24,9 +24,9 @@ const activityController = {
     },
     show: (req, res) => {
         const activityId = req.params.activityId
-        Activity.findById(activityId).then((activity) => {
-            console.log(activity)
-            res.render('app/showActivity', { activity })
+        Activitys.findById(activityId).then((activitys) => {
+            console.log(activitys)
+            res.render('app/showActivity', { activitys })
         })
     }
 }

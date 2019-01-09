@@ -14,15 +14,20 @@ const activityController = require('../controllers/activityController')
 router.get('/', pathController.index)
 router.get('/newpath', pathController.new)
 router.post('/', pathController.create)
+
+router.get('/newactivity', activityController.new)
+router.get('/activity', activityController.index)
+router.post('/activity', activityController.create)
+
+
 router.get('/:pathId', pathController.show)
+router.get('/:activityId', activityController.show)
 
 // when you click on the add button you take that object id and add it to the path id.
 // because of this we need to see the two ids in the url
 
-// router.get('/activity', activity.index)
-router.get('/newactivity', activityController.new)
-router.post('/activity', activityController.create)
-router.get('/:activityId', pathController.show)
+
+
 
 // router.get('/gasstation', gasStationController.index)
 // router.post('/gasstation', gasStationController.create)
