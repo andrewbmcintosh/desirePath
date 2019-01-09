@@ -20,8 +20,8 @@ router.get('/activity', activityController.index)
 router.post('/activity', activityController.create)
 
 
-router.get('/:pathId', pathController.show)
-router.get('/:activityId', activityController.show)
+router.get('/path/:pathId', pathController.show)
+router.get('/activity/:activityId', activityController.show)
 
 // then
 // when you click on the add button you take that object id and add it to the path id.
