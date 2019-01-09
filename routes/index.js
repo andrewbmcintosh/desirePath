@@ -16,6 +16,7 @@ router.get('/:pathId/newActivity', activityController.new)
 
 router.get('/newActivity', activityController.new)
 router.get('/activity', activityController.index)
+router.post('/activity', activityController.create)
 
 router.get('/newFood', foodController.new)
 router.get('/food', foodController.index)
