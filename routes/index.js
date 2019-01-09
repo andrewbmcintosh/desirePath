@@ -19,12 +19,11 @@ router.post('/', pathController.create)
 router.get('/newactivity', activityController.new)
 router.get('/activity', activityController.index)
 // router.post('/activity', activityController.create)
-router.post('/:pathId/activity', activityController.createStopInPath)
 
 // going to create a add stop route to funnel the add stops into. This can
 // help create a clear way to design something where a person does not 
 // need to create a path to add a stop
-router.post('/:pathId/addStop/activity/:activityId', addStopController.activity)
+// router.post('/:pathId/addStop/activity/:activityId', addStopController.activity)
 
 router.get('/path/:pathId', pathController.show)
 router.get('/activity/:activityId', activityController.show)
