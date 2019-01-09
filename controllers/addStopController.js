@@ -2,6 +2,9 @@ const Paths = require("../models/Path")
 const Activitys = require("../models/Activity")
 
 const addStopController = {
+    new: (req, res) => {
+        res.render("app/newAddStop")
+    },
     activity: (req, res) => {
         const pathId = req.params.pathId
         const activityId = req.params.activityId

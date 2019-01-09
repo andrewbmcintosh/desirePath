@@ -7,50 +7,37 @@ const foodController = require('../controllers/foodController')
 const gasStationController = require('../controllers/gasStationController')
 const sceneryController = require('../controllers/sceneryController')
 
-// const foodController = require('../controllers/foodController')
-// const gasController = require('../controllers/gasController')
-// const sceneryController = require('../controllers/sceneryController')
-
-
-// const gasStationController = require("../models/GasStation")
-// const sceneryController = require("../controllers/sceneryController")
-// const foodController = require("../controllers/foodController")
-
 router.get('/', pathController.index)
 router.get('/newPath', pathController.new)
 router.post('/', pathController.create)
 
-router.get('/newActivity', activityController.new)
+router.get('/:pathId/newActivity', activityController.new)
+// router.get('/newActivity', activityController.new)
 router.get('/activity', activityController.index)
 
 router.get('/newFood', foodController.new)
 router.get('/food', foodController.index)
 router.post('/food', foodController.create)
 
-
 router.get('/newGasStation', gasStationController.new)
 router.get('/gasStation', gasStationController.index)
 router.post('/gasStation', gasStationController.create)
 
-
 router.get('/newScenery', sceneryController.new)
 router.get('/scenery', sceneryController.index)
 router.post('/scenery', sceneryController.create)
-
-
-
-
-
 
 // router.post('/activity', activityController.create)
 
 // going to create a add stop route to funnel the add stops into. This can
 // help create a clear way to design something where a person does not 
 // need to create a path to add a stop
+
+router.get('/:pathId/addStop', addStopController.new)
 router.post('/:pathId/addStop/activity/:activityId', addStopController.activity)
-router.post('/:pathId/addStop/activity/:foodId', addStopController.food)
-router.post('/:pathId/addStop/activity/:gasStationId', addStopController.gasStation)
-router.post('/:pathId/addStop/activity/:sceneryId', addStopController.scenery)
+router.post('/:pathId/addStop/food/:foodId', addStopController.food)
+router.post('/:pathId/addStop/gasStation/:gasStationId', addStopController.gasStation)
+router.post('/:pathId/addStop/scenery/:sceneryId', addStopController.scenery)
 
 router.get('/path/:pathId', pathController.show)
 router.get('/activity/:activityId', activityController.show)
