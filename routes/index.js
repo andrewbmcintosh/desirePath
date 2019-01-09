@@ -11,8 +11,10 @@ router.get('/', pathController.index)
 router.get('/newPath', pathController.new)
 router.post('/', pathController.create)
 
+//the route below currently works from the addStopController 
 router.get('/:pathId/newActivity', activityController.new)
-// router.get('/newActivity', activityController.new)
+
+router.get('/newActivity', activityController.new)
 router.get('/activity', activityController.index)
 
 router.get('/newFood', foodController.new)
