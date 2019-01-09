@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const pathController = require('../controllers/pathController')
 const activityController = require('../controllers/activityController')
+const addStopController = require('../controllers/addStopController')
 // const foodController = require('../controllers/foodController')
 // const gasController = require('../controllers/gasController')
 // const sceneryController = require('../controllers/sceneryController')
@@ -20,13 +21,15 @@ router.get('/activity', activityController.index)
 router.post('/activity', activityController.create)
 router.post('/:pathId/activity', activityController.createStopInPath)
 
-// trying to make it so that it pushes the new activity into the path
-router.get('/:pathId/newactivity', activityController.newStopInPath)
+// going to create a add stop route to funnel the add stops into. This can
+// help create a clear way to design something where a person does not 
+// need to create a path to add a stop
+router.post('/:pathId/addStop/activity/:activityId', addStopController.activity)
 
-// below works
-router.get('/:pathId', pathController.show)
-router.get('/:activityId', activityController.show)
+router.get('/path/:pathId', pathController.show)
+router.get('/activity/:activityId', activityController.show)
 
+// then
 // when you click on the add button you take that object id and add it to the path id.
 // because of this we need to see the two ids in the url
 
