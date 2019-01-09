@@ -5,6 +5,8 @@ const sceneryController = {
         Scenery.find({}).then(scenery => {
             res.render('app/index', { scenery })
         })
+    }, new: (req, res) => {
+        res.render("app/newScenery")
     },
     create: (req, res) => {
         console.log(req.body)

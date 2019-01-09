@@ -5,6 +5,8 @@ const foodController = {
         Food.find({}).then(food => {
             res.render('app/index', { food })
         })
+    }, new: (req, res) => {
+        res.render("app/newFood")
     },
     create: (req, res) => {
         console.log(req.body)

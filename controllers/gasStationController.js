@@ -5,6 +5,8 @@ const gasStationController = {
         GasStation.find({}).then(gasStation => {
             res.render('app/index', { gasStation })
         })
+    }, new: (req, res) => {
+        res.render("app/newGasStation")
     },
     create: (req, res) => {
         console.log(req.body)
