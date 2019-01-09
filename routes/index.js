@@ -23,6 +23,7 @@ router.post('/activity', activityController.create)
 router.get('/:pathId', pathController.show)
 router.get('/:activityId', activityController.show)
 
+// then
 // when you click on the add button you take that object id and add it to the path id.
 // because of this we need to see the two ids in the url
 
