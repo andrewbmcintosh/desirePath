@@ -17,9 +17,13 @@ router.post('/', pathController.create)
 
 router.get('/newactivity', activityController.new)
 router.get('/activity', activityController.index)
-router.post('/activity', activityController.create)
+// router.post('/activity', activityController.create)
+router.post('/:pathId/activity', activityController.createStopInPath)
 
+// trying to make it so that it pushes the new activity into the path
+router.get('/:pathId/newactivity', activityController.newStopInPath)
 
+// below works
 router.get('/:pathId', pathController.show)
 router.get('/:activityId', activityController.show)
 
