@@ -10,7 +10,10 @@ const Paths = new Schema({
     startingCity: String,
     startingState: String,
     description: String,
-    stops: [],
+    stops: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Activity'
+    }],
     // ^^^^^^  need to change stops to the documents for the spcific stops
     loggedBy: String
     // value: Number, ** commented out to figure out how number works 
