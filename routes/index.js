@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const pathController = require('../controllers/pathController')
 const activityController = require('../controllers/activityController')
+const addStopController = require('../controllers/addStopController')
 // const foodController = require('../controllers/foodController')
 // const gasController = require('../controllers/gasController')
 // const sceneryController = require('../controllers/sceneryController')
@@ -18,6 +19,11 @@ router.post('/', pathController.create)
 router.get('/newactivity', activityController.new)
 router.get('/activity', activityController.index)
 router.post('/activity', activityController.create)
+
+// going to create a add stop route to funnel the add stops into. This can
+// help create a clear way to design something where a person does not 
+// need to create a path to add a stop
+router.post('/:pathId/addStop/activity/:activityId', addStopController.activity)
 
 
 router.get('/path/:pathId', pathController.show)
