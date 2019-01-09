@@ -19,6 +19,13 @@ const foodController = {
         }).then(newpath => {
             res.redirect('/')
         })
+    },
+    show: (req, res) => {
+        const foodId = req.params.foodId
+        Food.findById(foodId).then((food) => {
+            console.log(food)
+            res.render('app/showFood', { food })
+        })
     }
 }
 

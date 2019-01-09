@@ -19,6 +19,13 @@ const gasStationController = {
         }).then(newpath => {
             res.redirect('/')
         })
+    }, 
+    show: (req, res) => {
+        const gasStationId = req.params.gasStationId
+        GasStation.findById(gasStationId).then((gasStation) => {
+            console.log(gasStation)
+            res.render('app/showGasStation', { gasStation })
+        })
     }
 }
 
