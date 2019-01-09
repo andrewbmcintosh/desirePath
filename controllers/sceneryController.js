@@ -19,6 +19,13 @@ const sceneryController = {
         }).then(newpath => {
             res.redirect('/')
         })
+    },
+    show: (req, res) => {
+        const sceneryId = req.params.sceneryId
+        Scenery.findById(sceneryId).then((scenery) => {
+            console.log(scenery)
+            res.render('app/showScenery', { scenery })
+        })
     }
 }
 
