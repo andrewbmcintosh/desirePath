@@ -11,7 +11,8 @@ const activityController = {
     },
     // new stop in path is not necessary 
     newStopInPath: (req, res) => {
-        res.render("app/newActivity")
+        const pathId = req.params.pathId
+        res.render("app/newActivity", { pathId })
     },
     create: (req, res) => {
         console.log(req.body)
