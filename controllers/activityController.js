@@ -3,7 +3,7 @@ const Activitys = require("../models/Activity")
 const activityController = {
     index: (req, res) => {
         Activitys.find({}).then(activitys => {
-            res.render('app/index', { activitys })
+            res.render('app/indexActivity', { activitys })
         })
     }, new: (req, res) => {
         res.render("app/newActivity")

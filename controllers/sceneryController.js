@@ -3,7 +3,7 @@ const Scenery = require("../models/Scenery")
 const sceneryController = {
     index: (req, res) => {
         Scenery.find({}).then(scenery => {
-            res.render('app/index', { scenery })
+            res.render('app/indexScenery', { scenery })
         })
     }, new: (req, res) => {
         res.render("app/newScenery")

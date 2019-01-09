@@ -3,7 +3,7 @@ const Food = require("../models/Food")
 const foodController = {
     index: (req, res) => {
         Food.find({}).then(food => {
-            res.render('app/index', { food })
+            res.render('app/indexFood', { food })
         })
     }, new: (req, res) => {
         res.render("app/newFood")

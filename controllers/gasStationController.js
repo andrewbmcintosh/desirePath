@@ -3,7 +3,7 @@ const GasStation = require("../models/GasStation")
 const gasStationController = {
     index: (req, res) => {
         GasStation.find({}).then(gasStation => {
-            res.render('app/index', { gasStation })
+            res.render('app/indexGasStation', { gasStation })
         })
     }, new: (req, res) => {
         res.render("app/newGasStation")

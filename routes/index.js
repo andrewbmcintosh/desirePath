@@ -17,11 +17,31 @@ const sceneryController = require('../controllers/sceneryController')
 // const foodController = require("../controllers/foodController")
 
 router.get('/', pathController.index)
-router.get('/newpath', pathController.new)
+router.get('/newPath', pathController.new)
 router.post('/', pathController.create)
 
-router.get('/newactivity', activityController.new)
+router.get('/newActivity', activityController.new)
 router.get('/activity', activityController.index)
+
+router.get('/newFood', foodController.new)
+router.get('/food', foodController.index)
+router.post('/food', foodController.create)
+
+
+router.get('/newGasStation', gasStationController.new)
+router.get('/gasStation', gasStationController.index)
+router.post('/gasStation', gasStationController.create)
+
+
+router.get('/newScenery', sceneryController.new)
+router.get('/scenery', sceneryController.index)
+router.post('/scenery', sceneryController.create)
+
+
+
+
+
+
 // router.post('/activity', activityController.create)
 
 // going to create a add stop route to funnel the add stops into. This can
@@ -41,21 +61,6 @@ router.get('/scenery/:sceneryId', sceneryController.show)
 // then
 // when you click on the add button you take that object id and add it to the path id.
 // because of this we need to see the two ids in the url
-
-
-
-
-// router.get('/gasstation', gasStationController.index)
-// router.post('/gasstation', gasStationController.create)
-
-
-
-// router.get('/scenery', sceneryController.index)
-// router.post('/', sceneryController.create)
-
-// router.get('/food', foodController.index)
-// router.post('/', foodController.create)
-
 
 
 
