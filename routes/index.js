@@ -37,7 +37,8 @@ router.post('/scenery', sceneryController.create)
 // help create a clear way to design something where a person does not 
 // need to create a path to add a stop
 
-router.get('/:pathId/addStop', addStopController.new)
+// router.get('/:pathId/addStop', addStopController.new)
+router.post('/:pathId/addStop/activity', addStopController.activity)
 router.post('/:pathId/addStop/activity/:activityId', addStopController.activity)
 router.post('/:pathId/addStop/food/:foodId', addStopController.food)
 router.post('/:pathId/addStop/gasStation/:gasStationId', addStopController.gasStation)

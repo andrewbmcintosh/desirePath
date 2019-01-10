@@ -11,6 +11,8 @@ const addStopController = {
         const activityId = req.params.activityId
         Paths.findByIdAndUpdate(pathId, { $push: { stops: activityId } }).then(() => {
             console.log(activityId)
+            // below might give problems, need to see where it is redirecting
+            res.redirect(`/${pathId}/path`)
         })
     },
     food: (req, res) => {
