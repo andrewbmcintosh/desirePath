@@ -23,7 +23,12 @@ const activityController = {
         }
         Activitys.create({ newObject }).then((newlyCreatedObject) => {
             console.log(newlyCreatedObject._id)
-            Paths.findByIdAndUpdate(pathId)
+            const pathId = req.params.pathId
+            const newActivityId = newlyCreatedObject._id
+            console.log(newActivityId)
+            console.log(req.params.path)
+            console.log(pathId)
+            Paths.findByIdAndUpdate(pathId, { $push: { stops: newActivityId } })
             res.redirect('/')
         })
     },
