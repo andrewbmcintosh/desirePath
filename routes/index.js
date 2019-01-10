@@ -8,6 +8,7 @@ const gasStationController = require('../controllers/gasStationController')
 const sceneryController = require('../controllers/sceneryController')
 
 router.get('/', pathController.index)
+router.get('/:pathId/path', pathController.show)
 router.get('/newPath', pathController.new)
 router.post('/', pathController.create)
 
