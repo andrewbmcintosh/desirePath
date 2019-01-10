@@ -12,7 +12,7 @@ const activityController = {
     create: (req, res) => {
         const pathId = req.params.pathId
         console.log(req.body)
-        const newObject = {
+        Activitys.create({
             name: req.body.name,
             img: req.body.img,
             address: req.body.address,
@@ -20,15 +20,7 @@ const activityController = {
             state: req.body.state,
             type: req.body.type,
             description: req.body.description
-        }
-        Activitys.create({ newObject }).then((newlyCreatedObject) => {
-            console.log(newlyCreatedObject._id)
-            const pathId = req.params.pathId
-            const newActivityId = newlyCreatedObject._id
-            console.log(newActivityId)
-            console.log(req.params.path)
-            console.log(pathId)
-            Paths.findByIdAndUpdate(pathId, { $push: { stops: newActivityId } })
+        }).then(newpath => {
             res.redirect('/')
         })
     },
