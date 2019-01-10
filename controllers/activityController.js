@@ -12,6 +12,11 @@ const activityController = {
     create: (req, res) => {
         const pathId = req.params.pathId
         console.log(req.body)
+        // could i make it so that the button actually creates an empty object and 
+        // then the form is actually just updating the document with that information
+        // including updating the other object with that ID
+        // i can have that button be a post that links to an action that then is
+        // redirected to the update of that document
         Activitys.create({
             name: req.body.name,
             img: req.body.img,
