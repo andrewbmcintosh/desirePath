@@ -38,8 +38,9 @@ router.post('/scenery', sceneryController.create)
 // need to create a path to add a stop
 
 // router.get('/:pathId/addStop', addStopController.new)
-router.post('/:pathId/addStop/activity/:activityId', addStopController.activity)
-router.post('/:pathId/addStop/activity/:activityId', addStopController.activity)
+router.get('/:pathId/addStop/activity/', addStopController.newActivity)
+
+router.post('/:pathId/addStop/activity', addStopController.activity)
 router.post('/:pathId/addStop/food/:foodId', addStopController.food)
 router.post('/:pathId/addStop/gasStation/:gasStationId', addStopController.gasStation)
 router.post('/:pathId/addStop/scenery/:sceneryId', addStopController.scenery)

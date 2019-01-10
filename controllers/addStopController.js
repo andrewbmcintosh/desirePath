@@ -5,10 +5,22 @@ const addStopController = {
     new: (req, res) => {
         const pathId = req.params.pathId
         res.render("app/newAddStop", { pathId: pathId })
+    }, newActivity: (req, res) => {
+        const pathId = req.params.pathId
+        res.render("app/pathNewActivity", { pathId: pathId })
     },
     activity: (req, res) => {
         const pathId = req.params.pathId
         const activityId = req.params.activityId
+        Activitys.create({
+            name: req.body.name,
+            img: req.body.img,
+            address: req.body.address,
+            city: req.body.city,
+            state: req.body.state,
+            type: req.body.type,
+            description: req.body.description
+        })
         Paths.findByIdAndUpdate(pathId, { $push: { stops: activityId } }).then(() => {
             console.log(activityId)
             // below might give problems, need to see where it is redirecting
