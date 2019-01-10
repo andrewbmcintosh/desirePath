@@ -1,4 +1,5 @@
 const Activitys = require("../models/Activity")
+const Paths = require("../models/Path")
 
 const activityController = {
     index: (req, res) => {
@@ -9,6 +10,7 @@ const activityController = {
         res.render("app/newActivity")
     },
     create: (req, res) => {
+        const pathId = req.params.pathId
         console.log(req.body)
         Activitys.create({
             name: req.body.name,
