@@ -7,12 +7,6 @@ const activityController = {
             res.render('app/indexActivity', { activitys })
         })
     }, new: (req, res) => {
-        Activitys.create({}, () => {
-
-        }).save().then(() => {
-            console.log(Activitys.id)
-        })
-
         res.render("app/newActivity")
     },
     create: (req, res) => {
