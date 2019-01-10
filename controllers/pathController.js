@@ -1,4 +1,10 @@
 const Paths = require("../models/Path")
+const Activitys = require("../models/Activity")
+const Food = require("../models/Food")
+const Scenery = require("../models/Scenery")
+const GasStation = require("../models/GasStation")
+
+
 
 const pathController = {
     index: (req, res) => {
