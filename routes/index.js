@@ -39,11 +39,15 @@ router.post('/scenery', sceneryController.create)
 
 // router.get('/:pathId/addStop', addStopController.new)
 router.get('/:pathId/addStop/activity/', addStopController.newActivity)
+router.get('/:pathId/addStop/food/', addStopController.newFood)
+router.get('/:pathId/addStop/gasStation/', addStopController.newGasStation)
+router.get('/:pathId/addStop/scenery/', addStopController.newScenery)
+
 
 router.post('/:pathId/addStop/activity', addStopController.activity)
-router.post('/:pathId/addStop/food/:foodId', addStopController.food)
-router.post('/:pathId/addStop/gasStation/:gasStationId', addStopController.gasStation)
-router.post('/:pathId/addStop/scenery/:sceneryId', addStopController.scenery)
+router.post('/:pathId/addStop/food', addStopController.food)
+router.post('/:pathId/addStop/gasStation', addStopController.gasStation)
+router.post('/:pathId/addStop/scenery', addStopController.scenery)
 
 router.get('/path/:pathId', pathController.show)
 router.get('/activity/:activityId', activityController.show)
