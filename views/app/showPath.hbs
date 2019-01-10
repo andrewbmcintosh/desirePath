@@ -8,4 +8,7 @@
 <a href="/{{paths._id}}/addStop/gasStation"><button>Add Gas Station Stop</button></a>
 <a href="/{{paths._id}}/addStop/scenery"><button>Add Scenery Stop</button></a>
 
-{{paths.stops}}
+{{#each paths.activity}}
+{{name}}
+{{city}}
+{{/each}}

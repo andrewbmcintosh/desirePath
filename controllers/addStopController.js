@@ -24,9 +24,9 @@ const addStopController = {
             state: req.body.state,
             type: req.body.type,
             description: req.body.description
-        }).then((activity) => {
-            Paths.findByIdAndUpdate(pathId, { $push: { stops: activity._id } }).then(() => {
-                console.log(activityId)
+        }).then((newActivity) => {
+            Paths.findByIdAndUpdate(pathId, { $push: { activity: newActivity._id } }).then(() => {
+                console.log(newActivity._id)
                 // below might give problems, need to see where it is redirecting
                 res.redirect(`/${pathId}/path`)
             })
@@ -46,9 +46,9 @@ const addStopController = {
             state: req.body.state,
             foodOptions: req.body.foodOptions,
             description: req.body.description
-        }).then((food) => {
-            Paths.findByIdAndUpdate(pathId, { $push: { stops: food._id } }).then(() => {
-                console.log(foodId)
+        }).then((newFood) => {
+            Paths.findByIdAndUpdate(pathId, { $push: { food: newFood._id } }).then(() => {
+                console.log(newFood._id)
                 res.redirect(`/${pathId}/path`)
             })
         })

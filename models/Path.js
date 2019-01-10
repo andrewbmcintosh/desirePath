@@ -10,8 +10,13 @@ const Paths = new Schema({
     startingCity: String,
     startingState: String,
     description: String,
-    stops: [{
+    activity: [{
         type: Schema.Types.ObjectId,
+        ref: 'Activity'
+    }],
+    food: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Food'
     }],
     loggedBy: String
     // value: Number, ** commented out to figure out how number works 

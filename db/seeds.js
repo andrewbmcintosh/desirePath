@@ -17,7 +17,8 @@ Path.deleteMany({}).
             startingCity: "Atlanta",
             startingState: "GA",
             description: "for so long human kind has sought to find the answer to lifes greatest question, the fastest way to the beach. Well... heres the answer.",
-            stops: [],
+            activity: [],
+            food: [],
             loggedBy: "Andrew B. McIntosh"
             // value:
         }, {
@@ -29,7 +30,8 @@ Path.deleteMany({}).
                 startingCity: "Atlanta",
                 startingState: "GA",
                 description: "great drive to North Carolina. Drive through North Georgia.",
-                stops: [],
+                activity: [],
+                food: [],
                 loggedBy: "Andrew B. McIntosh"
             })
     })

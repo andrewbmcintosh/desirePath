@@ -26,7 +26,8 @@ const pathController = {
             startingCity: req.body.startingCity,
             startingState: req.body.startingState,
             description: req.body.description,
-            stops: req.body.stops,
+            activity: req.body.activity,
+            food: req.body.food,
             loggedBy: req.body.loggedBy
             // value: req.body.value ** commented out to figure out how number works
         }).then(newPath => {
@@ -35,7 +36,11 @@ const pathController = {
     },
     show: (req, res) => {
         const pathId = req.params.pathId
-        Paths.findById(pathId).then((paths) => {
+        Paths.findById(pathId).populate('activity').then((paths) => {
+            console.log(paths)
+            res.render('app/showPath', { paths })
+        })
+        Paths.findById(pathId).populate('food').then((paths) => {
             console.log(paths)
             res.render('app/showPath', { paths })
         })
