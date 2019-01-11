@@ -45,25 +45,35 @@ Path.deleteMany({}).
                 state: "GA",
                 category: "Good ole apples",
                 description: "great spot to go in the fall",
-    
+
             }).then((food) => {
                 path.food.push(food)
             })
-            const gasStationFood = GasStation.create({
+            const pathGasStation = GasStation.create({
                 name: "Love's Travel Stop",
                 img: "--picture of a loves--",
-                address: "431 Main Street",
-                city: "Shorter",
-                state: "AL",
-                foodOptions: "Four different rollers, Subway, Mcdonalds",
-                description: "This is one of the best Love's in the Southeast. Cheapest Gas. The last quality one you will see on the way to 30A.",
-        
-            }).then((food) => {
-                path.food.push(food)
-            })
-            
+                address: "Main Street",
+                city: "Cartersville",
+                state: "GA",
+                foodOptions: "This is the pinnacle it has a McDonalds and Wendys",
+                description: "One of the Top Love's Trave Stops in Georgia",
 
-            Promise.all([pathActivity, pathFood]).then(() => {
+            }).then((gasStation) => {
+                path.gasStation.push(gasStation)
+            })
+            const pathScenery = Scenery.create({
+                name: "View From Lookout Mountain",
+                img: "--picture from Lookout--",
+                address: "Covenant College",
+                city: "Lookout Mtn.",
+                state: "TN",
+                description: " Beautiful view towards the west of Alabama and the valley below.",
+
+            }).then((scenery) => {
+                path.scenery.push(scenery)
+            })
+
+            Promise.all([pathActivity, pathFood, pathGasStation, pathScenery]).then(() => {
                 path.save()
             })
         })
@@ -83,7 +93,21 @@ Path.deleteMany({}).
         //         loggedBy: "Andrew B. McIntosh"
         //     })
     })
-
+Path.create({
+    name: "scenic route to Montreat",
+    destinationAddress: "401 Assembly Drive",
+    destinationCity: "Montreat",
+    destinationState: "NC",
+    startingAddress: "657 Ponce De Leon Ave",
+    startingCity: "Atlanta",
+    startingState: "GA",
+    description: "great drive to North Carolina. Drive through North Georgia.",
+    activity: [],
+    food: [],
+    gasStation: [],
+    scenery: [],
+    loggedBy: "Andrew B. McIntosh"
+})
 Activity.deleteMany({}).
     then(() => {
         return Activity.create({
