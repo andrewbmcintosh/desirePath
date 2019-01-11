@@ -18,6 +18,14 @@ const Paths = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Food'
     }],
+    gasStation: [{
+        type: Schema.Types.ObjectId,
+        ref: 'GasStation'
+    }],
+    scenery: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Scenery'
+    }],
     loggedBy: String
     // value: Number, ** commented out to figure out how number works 
     // ^^^^^^ need to figure out a way to increase value with clicks

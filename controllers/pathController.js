@@ -36,9 +36,11 @@ const pathController = {
     },
     show: (req, res) => {
         const pathId = req.params.pathId
-        Paths.findById(pathId).populate('activity', 'food').then((paths, food) => {
+        // can i add another populate after .populate('activity')? *** YES
+        // Paths.findById(pathId).populate('activity').then((paths) => {
+        Paths.findById(pathId).populate('activity').populate('food').populate('gasStation').populate('scenery').then((paths) => {
             console.log(paths)
-            res.render('app/showPath', { paths, food })
+            res.render('app/showPath', { paths })
         })
         // Paths.findById(pathId).populate('food').then((paths) => {
         //     console.log(paths)

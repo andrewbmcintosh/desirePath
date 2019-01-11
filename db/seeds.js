@@ -19,6 +19,8 @@ Path.deleteMany({}).
             description: "for so long human kind has sought to find the answer to lifes greatest question, the fastest way to the beach. Well... heres the answer.",
             activity: [],
             food: [],
+            gasStation: [],
+            scenery: [],
             loggedBy: "Andrew B. McIntosh"
             // value:
         }, {
@@ -32,6 +34,8 @@ Path.deleteMany({}).
                 description: "great drive to North Carolina. Drive through North Georgia.",
                 activity: [],
                 food: [],
+                gasStation: [],
+                scenery: [],
                 loggedBy: "Andrew B. McIntosh"
             })
     })
