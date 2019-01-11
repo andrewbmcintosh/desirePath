@@ -23,21 +23,65 @@ Path.deleteMany({}).
             scenery: [],
             loggedBy: "Andrew B. McIntosh"
             // value:
-        }, {
-                name: "scenic route to Montreat",
-                destinationAddress: "401 Assembly Drive",
-                destinationCity: "Montreat",
-                destinationState: "NC",
-                startingAddress: "657 Ponce De Leon Ave",
-                startingCity: "Atlanta",
-                startingState: "GA",
-                description: "great drive to North Carolina. Drive through North Georgia.",
-                activity: [],
-                food: [],
-                gasStation: [],
-                scenery: [],
-                loggedBy: "Andrew B. McIntosh"
+        }).then((path) => {
+            const pathActivity = Activity.create({
+                name: "Rafting on the Ocoee",
+                img: "--Picture of Rafting--",
+                address: "Ocoee River",
+                city: "Cleveland",
+                state: "TN",
+                type: "Rafting",
+                description: "grab some friends and a raft. Its a blast.",
+
+            }).then((activity) => {
+                path.activity.push(activity)
             })
+
+            const pathFood = Food.create({
+                name: "BeirGarden",
+                img: "--picture of a Beer Garden",
+                address: "Apples",
+                city: "Helen",
+                state: "GA",
+                category: "Good ole apples",
+                description: "great spot to go in the fall",
+    
+            }).then((food) => {
+                path.food.push(food)
+            })
+            const gasStationFood = GasStation.create({
+                name: "Love's Travel Stop",
+                img: "--picture of a loves--",
+                address: "431 Main Street",
+                city: "Shorter",
+                state: "AL",
+                foodOptions: "Four different rollers, Subway, Mcdonalds",
+                description: "This is one of the best Love's in the Southeast. Cheapest Gas. The last quality one you will see on the way to 30A.",
+        
+            }).then((food) => {
+                path.food.push(food)
+            })
+            
+
+            Promise.all([pathActivity, pathFood]).then(() => {
+                path.save()
+            })
+        })
+        //  {
+        //         name: "scenic route to Montreat",
+        //         destinationAddress: "401 Assembly Drive",
+        //         destinationCity: "Montreat",
+        //         destinationState: "NC",
+        //         startingAddress: "657 Ponce De Leon Ave",
+        //         startingCity: "Atlanta",
+        //         startingState: "GA",
+        //         description: "great drive to North Carolina. Drive through North Georgia.",
+        //         activity: [],
+        //         food: [],
+        //         gasStation: [],
+        //         scenery: [],
+        //         loggedBy: "Andrew B. McIntosh"
+        //     })
     })
 
 Activity.deleteMany({}).
