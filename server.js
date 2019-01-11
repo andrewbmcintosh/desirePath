@@ -8,6 +8,7 @@ app.use(express.json());
 app.use(methodOverride('_method'))
 app.use('/', router)
 
+app.use(express.static('public'))
 app.set("view engine", "hbs")
 
 const PORT = process.env.PORT || 3000
