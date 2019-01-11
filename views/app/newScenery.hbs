@@ -1,28 +1,72 @@
-<form action="/scenery"
-      method="POST">
-    <input type="text"
-           name="name"
-           placeholder="Name"
-           value="">
-    <input type="text"
-           name="img"
-           placeholder="Image Link"
-           value="">
-    <input type="text"
-           name="address"
-           placeholder="Address"
-           value="">
-    <input type="text"
-           name="city"
-           placeholder="City"
-           value="">
-    <input type="text"
-           name="state"
-           placeholder="State"
-           value="">
-    <input type="text"
-           name="description"
-           placeholder="Description"
-           value="">
-    <button type="submit">Add Scenery</button>
-</form>
+<section class="hero is-primary is-small is-transparent">
+       <div class="hero-body is-centered">
+              <div class="content title is-1 has-text-link">Add Scenic Spot</div>
+       </div>
+</section>
+<section class="section has-background-primary">
+       <form action="/scenery"
+             method="POST">
+              <div class="field">
+                     <label class="label has-text-white">Name</label>
+                     <div class="control">
+                            <input class="input"
+                                   type="text"
+                                   name="name"
+                                   placeholder="Name"
+                                   value="">
+                     </div>
+              </div>
+              <div class="field">
+                     <label class="label has-text-white">Image Link</label>
+                     <div class="control">
+                            <input class="input"
+                                   type="text"
+                                   name="img"
+                                   placeholder="Image Link"
+                                   value="">
+                     </div>
+              </div>
+              <div class="field">
+                     <label class="label has-text-white">Address</label>
+                     <div class="control">
+                            <input class="input"
+                                   type="text"
+                                   name="address"
+                                   placeholder="Address"
+                                   value="">
+                     </div>
+              </div>
+              <div class="field">
+                     <label class="label has-text-white">City</label>
+                     <div class="control">
+                            <input class="input"
+                                   type="text"
+                                   name="city"
+                                   placeholder="City"
+                                   value="">
+                     </div>
+              </div>
+              <div class="field">
+                     <label class="label has-text-white">State</label>
+                     <div class="control">
+                            <input class="input"
+                                   type="text"
+                                   name="state"
+                                   placeholder="State"
+                                   value="">
+                     </div>
+              </div>
+
+              <div class="field">
+                     <label class="label has-text-white">Description</label>
+                     <div class="control">
+                            <input class="input"
+                                   type="text"
+                                   name="description"
+                                   placeholder="Description"
+                                   value="">
+                     </div>
+              </div>
+              <button type="submit">Add Scenic Spot</button>
+       </form>
+</section>

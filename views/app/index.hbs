@@ -1,4 +1,4 @@
-<section class="hero is-primary is-large is-transparent">
+<section class="hero is-primary is-medium is-transparent">
     <div class="hero-body">
         <div class="columns is-centered">
             <div class="column is-two-thirds">
@@ -6,16 +6,20 @@
                     <div class="box">
                         <div class="columns is-centered">
                             <div class="column">
-                                <a class="button is-primary">Add Activity</a>
+                                <a class="button is-primary"
+                                   href="/newActivity">Add Activity</a>
                             </div>
                             <div class="column">
-                                <a class="button is-primary">Add Food Stop</a>
+                                <a class="button is-primary"
+                                   href="/newFood">Add Food Stop</a>
                             </div>
                             <div class="column">
-                                <a class="button is-primary">Add Gas Station</a>
+                                <a class="button is-primary"
+                                   href="/newGasStation">Add Gas Station</a>
                             </div>
                             <div class="column">
-                                <a class="button is-primary">Add Scenic Stop</a>
+                                <a class="button is-primary"
+                                   href="/newScenery">Add Scenic Stop</a>
                             </div>
                         </div>
 
@@ -33,7 +37,10 @@
         <div class="column is-offset-8"></div>
         <div class="column is-offset-8"></div>
 
-        <div class="column is-offset-9">Carve Your Own Path </div>
+        <div class="column is-offset-9 inline">
+            <a href="/newpath">
+                Carve Your Own Path<sppan class="icon is-medium"><i class="fas fa-arrow-circle-right"></i></i></sppan></a>
+        </div>
 
     </div>
 
@@ -60,7 +67,10 @@
                             {{description}}
                         </p>
                     </div>
-                    <nav class="level is-mobile">
+                    <a class="button is-danger is-rounded"
+                       href="/{{_id}}/path">View
+                        Path</a>
+                    {{!-- <nav class="level is-mobile">
                         <div class="level-left">
                             <a class="level-item"
                                aria-label="reply">
@@ -84,12 +94,10 @@
                                 </span>
                             </a>
                         </div>
-                    </nav>
+                    </nav> --}}
                 </div>
             </article>
         </div>
         {{/each}}
-
-
     </section>
 </body>

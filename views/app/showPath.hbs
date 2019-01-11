@@ -1,25 +1,48 @@
-<h1>{{paths.name}}</h1>
+<section class="hero is-primary is-small is-transparent">
+    <div class="hero-body is-centered">
+        <h1 class="content title is-1 has-text-white">{{paths.name}}</h1>
+        <h6 class="subtitle is-6">{{paths.startingCity}},{{paths.startingState}}<span class="icon"><i class="fas fa-long-arrow-alt-right"></i></span>{{paths.destinationCity}},{{paths.destinationState}}</h6>
+    </div>
+</section>
+<section class="section has-background-primary">
 
-<h3>{{paths.destinationCity}}</h3>
-<h3>{{paths.destinationState}}</h3>
 
-<a href="/{{paths._id}}/addStop/activity"><button class="button ">Add Activity Stop</button></a>
-<a href="/{{paths._id}}/addStop/food"><button class="button">Add Food Stop</button></a>
-<a href="/{{paths._id}}/addStop/gasStation"><button class="button">Add Gas Station Stop</button></a>
-<a href="/{{paths._id}}/addStop/scenery"><button class="button">Add Scenery Stop</button></a>
+    <h1></h1>
 
-<div> {{#each paths.activity}} {{name}}
-    {{city}}
-    {{/each}}</div>
-<div>{{#each paths.food}}
-    {{name}}
-    {{city}}
-    {{/each}}</div>
-<div>{{#each paths.gasStation}}
-    {{name}}
-    {{city}}
-    {{/each}}</div>
-<div>{{#each paths.scenery}}
-    {{name}}
-    {{city}}
-    {{/each}}</div>
+
+    <a href="/{{paths._id}}/addStop/activity"><button class="button ">Add Activity Stop</button></a>
+    <a href="/{{paths._id}}/addStop/food"><button class="button">Add Food Stop</button></a>
+    <a href="/{{paths._id}}/addStop/gasStation"><button class="button">Add Gas Station Stop</button></a>
+    <a href="/{{paths._id}}/addStop/scenery"><button class="button">Add Scenery Stop</button></a>
+</section>
+<section>
+    <div class="tile is-ancestor">
+        <div class="tile">
+            {{#each paths.activity}}
+            <div class="tile is-child box">
+                <div class="content">
+                    <p class="subtitle">{{name}}</p>
+                    <p>{{city}}</p>
+                </div>
+
+            </div>
+
+            {{/each}}</div>
+
+        <div class="tile">{{#each paths.food}}
+            <div class="tile is-child box"> {{name}}
+                {{city}}</div>
+
+            {{/each}}</div>
+        <div class="tile">{{#each paths.gasStation}}
+            <div class="tile is-child box"> {{name}}
+                {{city}}</div>
+
+            {{/each}}</div>
+        <div class="tile">{{#each paths.scenery}}
+            <div class="tile is-child box"> {{name}}
+                {{city}}</div>
+
+            {{/each}}</div>
+    </div>
+</section>
