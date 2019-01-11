@@ -28,6 +28,14 @@ const sceneryController = {
             console.log(scenery)
             res.render('app/showScenery', { scenery })
         })
+    },
+    delete: (req, res) => {
+        const sceneryId = req.params.sceneryId
+        Scenery.findByIdAndDelete(sceneryId).then(() => {
+            res.redirect('/scenery')
+        })
+
+
     }
 }
 

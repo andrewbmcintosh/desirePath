@@ -15,7 +15,7 @@
     <a href="/{{paths._id}}/addStop/gasStation"><button class="button">Add Gas Station Stop</button></a>
     <a href="/{{paths._id}}/addStop/scenery"><button class="button">Add Scenery Stop</button></a>
 </section>
-<section>
+<section class="section has-background-primary">
     <div class="tile is-ancestor">
         <div class="tile">
             {{#each paths.activity}}
@@ -23,6 +23,9 @@
                 <div class="content">
                     <p class="subtitle">{{name}}</p>
                     <p>{{city}}</p>
+                    <p><a href="/activity/{{_id}}"
+                           class="button is-small">View</a></p>
+
                 </div>
 
             </div>
@@ -30,19 +33,35 @@
             {{/each}}</div>
 
         <div class="tile">{{#each paths.food}}
-            <div class="tile is-child box"> {{name}}
-                {{city}}</div>
+            <div class="tile is-child box">
+                <div class="content">
+                    <p class="subtitle">{{name}}</p>
+                    <p>{{city}},{{state}}</p>
+                    <p><a href="/food/{{_id}}"
+                           class="button is-small">View</a></p>
+                </div>
 
-            {{/each}}</div>
+            </div> {{/each}}</div>
         <div class="tile">{{#each paths.gasStation}}
-            <div class="tile is-child box"> {{name}}
-                {{city}}</div>
+            <div class="tile is-child box">
+                <div class="content">
+                    <p class="subtitle">{{name}}</p>
+                    <p>{{city}},{{state}}</p>
+                    <p><a href="/gasStation/{{_id}}"
+                           class="button is-small">View</a></p>
+                </div>
 
+            </div>
             {{/each}}</div>
         <div class="tile">{{#each paths.scenery}}
-            <div class="tile is-child box"> {{name}}
-                {{city}}</div>
+            <div class="tile is-child box">
+                <div class="content">
+                    <p class="subtitle">{{name}}</p>
+                    <p>{{city}},{{state}}</p>
+                    <p><a href="/scenery/{{_id}}"
+                           class="button is-small">View</a></p>
+                </div>
 
-            {{/each}}</div>
+            </div> {{/each}}</div>
     </div>
 </section>

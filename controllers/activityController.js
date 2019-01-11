@@ -35,6 +35,14 @@ const activityController = {
             console.log(activitys)
             res.render('app/showActivity', { activitys })
         })
+    },
+    delete: (req, res) => {
+        const activityId = req.params.activityId
+        Activitys.findByIdAndDelete(activityId).then(() => {
+            res.redirect('/activity')
+        })
+
+
     }
 }
 

@@ -51,6 +51,11 @@ router.post('/:pathId/addStop/scenery', addStopController.scenery)
 
 router.get('/path/:pathId', pathController.show)
 router.get('/activity/:activityId', activityController.show)
+router.get('/activity/delete/:activityId', activityController.delete)
+router.get('/food/delete/:activityId', activityController.delete)
+router.get('/gasStation/delete/:activityId', activityController.delete)
+router.get('/scenery/delete/:activityId', activityController.delete)
+
 router.get('/food/:foodId', foodController.show)
 router.get('/gasStation/:gasStationId', gasStationController.show)
 router.get('/scenery/:sceneryId', sceneryController.show)

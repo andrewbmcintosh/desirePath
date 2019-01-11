@@ -28,6 +28,14 @@ const foodController = {
             console.log(food)
             res.render('app/showFood', { food })
         })
+    },
+    delete: (req, res) => {
+        const foodId = req.params.foodId
+        Food.findByIdAndDelete(foodId).then(() => {
+            res.redirect('/food')
+        })
+
+
     }
 }
 
