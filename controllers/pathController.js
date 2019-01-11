@@ -36,14 +36,14 @@ const pathController = {
     },
     show: (req, res) => {
         const pathId = req.params.pathId
-        Paths.findById(pathId).populate('activity').then((paths) => {
+        Paths.findById(pathId).populate('activity', 'food').then((paths, food) => {
             console.log(paths)
-            res.render('app/showPath', { paths })
+            res.render('app/showPath', { paths, food })
         })
-        Paths.findById(pathId).populate('food').then((paths) => {
-            console.log(paths)
-            res.render('app/showPath', { paths })
-        })
+        // Paths.findById(pathId).populate('food').then((paths) => {
+        //     console.log(paths)
+        //     res.render('app/showPath', { paths })
+        // })
     }
 }
 
